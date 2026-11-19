@@ -26,3 +26,13 @@ def test_rejeita_idade_acima_de_100():
     resultado = idade_permitida(idade)
     # verificar
     assert resultado is False
+
+
+def test_rejeita_idade_que_nao_e_numero_inteiro():
+    # preparar: float, texto e bool, todos dentro da faixa 21 a 100
+    idades_invalidas = [25.5, "30", True]
+    for idade in idades_invalidas:
+        # agir
+        resultado = idade_permitida(idade)
+        # verificar
+        assert resultado is False
